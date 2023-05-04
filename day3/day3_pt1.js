@@ -12,12 +12,15 @@ fs.readFile("./input.txt", "utf8", (err, data) => {
 
     // let oneCompartment = arr[i].length/2
     let arr = data.split('\n')
-    console.log(arr[1].length)
-    for (let i = 0; i < (arr[0].length / 2); i++) {
-        for (let j = arr[0].length; j > (arr[0].length / 2); j--)
-        if (arr[0][i] == arr[0][j]) {
-            console.log("match ", arr[0][i], arr[0][j])
-        };
+
+    function findMatch(input) {
+        for (let i = 0; i < (input.length / 2); i++) {
+            for (let j = input.length; j > (input.length / 2); j--)
+                if (input[i] == input[j]) {
+                    console.log("match ", input[i], input[j])
+            };
+        }
     }
+    findMatch(arr[0])
 })
 
